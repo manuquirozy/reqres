@@ -13,10 +13,10 @@ function User({ user: { avatar, email, first_name, id, last_name } }) {
           {first_name} {last_name}
         </h2>
         <h3>{email}</h3>
-        <Link to={"/edit/" + id}>
+        <Link to={`/edit/${id}`}>
           <PencilIcon />
         </Link>
-        <Link to={"/delete/" + id}>
+        <Link to={`/delete/${id}`}>
           <TrashIcon />
         </Link>
       </div>

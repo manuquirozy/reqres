@@ -11,7 +11,6 @@ function Users() {
     try {
       axios.get(URL + "api/users?page=1").then((res) => {
         setUsers(res.data.data);
-        console.log(res.data.data);
       });
     } catch (error) {
       console.log(error);
