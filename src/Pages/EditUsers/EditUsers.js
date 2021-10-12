@@ -5,7 +5,6 @@ import { edit } from '../../features/userList/userListSlice'
 function EditUsers(props) {
   const user = useSelector(state => state.userList.users)
   const dispatch = useDispatch()
-  console.log(user)
   return (
     <div>
       Edit users. The id is: {props.match.params.id}{" "}

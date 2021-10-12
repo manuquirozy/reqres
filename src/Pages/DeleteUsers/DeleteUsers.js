@@ -5,7 +5,6 @@ import { del } from '../../features/userList/userListSlice'
 function DeleteUsers(props) {
   const user = useSelector(state => state.userList.users)
   const dispatch = useDispatch()
-  console.log(user)
   return (<div>Delete users. The id is: {props.match.params.id}
         <button
         aria-label="Increment value"
