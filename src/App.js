@@ -5,8 +5,8 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Users from "./Pages/Users/Users";
-// import DeleteUsers from "./Pages/DeleteUsers/DeleteUsers";
-// import EditUsers from "./Pages/EditUsers/EditUsers";
+import DeleteUsers from "./Pages/DeleteUsers/DeleteUsers";
+import EditUsers from "./Pages/EditUsers/EditUsers";
 
 function App() {
   return (
@@ -17,9 +17,9 @@ function App() {
         </header>
         <main>
           <Switch>
-            <Route exact path="/users" component={Users} />
-            {/* <Route exact path="/delete/:id" component={DeleteUsers} />
-            <Route exact path="/edit/:id" component={EditUsers} /> */}
+            <Route exact path="/" component={Users} />
+            <Route exact path="/delete/:id" component={DeleteUsers} />
+            <Route exact path="/edit/:id" component={EditUsers} />
           </Switch>
         </main>
         <footer>

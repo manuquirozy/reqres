@@ -10,7 +10,7 @@ export const users = (state = initialState, action) => {
       return state.map((user) =>
         user.id === action.payload.id ? { ...action.payload } : { ...user });
     case DELETE_USER: 
-      return state.filter((user) => user.id !== action.payload);
+      return state.filter((user) => user.id !== parseInt(action.payload));
     case LOAD_USERS: 
       return [...state, ...action.payload]
     default:
