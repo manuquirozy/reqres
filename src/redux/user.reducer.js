@@ -12,7 +12,7 @@ export const users = (state = initialState, action) => {
     case DELETE_USER: 
       return state.filter((user) => user.id !== parseInt(action.payload));
     case LOAD_USERS: 
-      return [...state, ...action.payload]
+      return [...action.payload]
     default:
       return state
   }
