@@ -17,7 +17,7 @@ function App() {
         </header>
         <main>
           <Switch>
-            <Route exact path="/users" component={Users} />
+            <Route exact path="/" component={Users} />
             <Route exact path="/delete/:id" component={DeleteUsers} />
             <Route exact path="/edit/:id" component={EditUsers} />
           </Switch>
