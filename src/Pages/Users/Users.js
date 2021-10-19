@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import User from "../../Components/User/User";
-import { useDispatch, useSelector } from 'react-redux'
-import { loadUsers } from "../../redux/user.actions"
+import { useDispatch, useSelector } from "react-redux";
+import { loadUsers } from "../../redux/user.actions";
 
 function Users() {
-  const dispatch = useDispatch()
-  const users = useSelector(state => state.users)
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.users);
 
   useEffect(() => {
-    dispatch(loadUsers())
+    dispatch(loadUsers());
     // eslint-disable-next-line
   }, []);
 

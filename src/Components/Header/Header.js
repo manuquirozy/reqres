@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext, themes } from "../../utils/themeContext";
 
-function Header() {
-  return <div><h1>My contact list</h1></div>;
+function Header(onToggleTheme) {
+  const { theme, setTheme } = useContext(ThemeContext);
+  return (
+    <div>
+      <h1>My contact list</h1>
+      <button
+        onClick={setTheme(
+          theme === themes.light
+            ? setTheme(themes.dark)
+            : setTheme(themes.light)
+        )}
+      >
+        Toggle theme {JSON.stringify(theme)}
+      </button>
+    </div>
+  );
 }
 
 export default Header;
