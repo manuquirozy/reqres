@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -8,15 +8,16 @@ import Footer from "./Components/Footer/Footer";
 import Users from "./Pages/Users/Users";
 import DeleteUsers from "./Pages/DeleteUsers/DeleteUsers";
 import EditUsers from "./Pages/EditUsers/EditUsers";
-import { ThemeContext, themes } from "./utils/themeContext";
+import { ThemeContext, themes } from "./utils/themeContext"
 
 function App() {
-  const [theme, setTheme] = useState(themes.light);
-  const value = { theme, setTheme };
+  const { theme } = useContext(ThemeContext)
+
+  console.log({theme: themes[theme]})
+
   return (
-    <ThemeContext.Provider value={value}>
       <Router>
-        <div className="App" style={theme}>
+        <div className="App" style={themes[theme]}>
           <header className="App-header">
             <Header />
           </header>
@@ -32,7 +33,6 @@ function App() {
           </footer>
         </div>
       </Router>
-    </ThemeContext.Provider>
   );
 }
 

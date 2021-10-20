@@ -7,10 +7,8 @@ function Header(onToggleTheme) {
     <div>
       <h1>My contact list</h1>
       <button
-        onClick={setTheme(
-          theme === themes.light
-            ? setTheme(themes.dark)
-            : setTheme(themes.light)
+        onClick={() => setTheme(
+          theme === 'light' ? 'dark' : 'light'
         )}
       >
         Toggle theme {JSON.stringify(theme)}
