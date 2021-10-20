@@ -13,8 +13,6 @@ import { ThemeContext, themes } from "./utils/themeContext"
 function App() {
   const { theme } = useContext(ThemeContext)
 
-  console.log({theme: themes[theme]})
-
   return (
       <Router>
         <div className="App" style={themes[theme]}>
