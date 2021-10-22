@@ -18,7 +18,6 @@ function EditUsers(props) {
     setUser({ ...user, [e.target.name]: e.target.value });
   }
 
-  console.log(user);
   return (
     <div>
       <h2>Edit user</h2>
