@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
-import { ThemeContext, themes } from "../../utils/themeContext";
+import { useSelector } from "react-redux";
+import { ThemeContext } from "../../utils/themeContext";
 
 function Header(onToggleTheme) {
   const { theme, setTheme } = useContext(ThemeContext);
+  const {username} = useSelector((state) => state.login)
   return (
     <div>
       <h1>My contact list</h1>
-      <button
-        onClick={() => setTheme(
-          theme === 'light' ? 'dark' : 'light'
-        )}
-      >
-        Toggle theme {JSON.stringify(theme)}
+      {username && <h4>Username: {username}</h4>}
+      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        Toggle theme
       </button>
     </div>
   );

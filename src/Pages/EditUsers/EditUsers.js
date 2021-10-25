@@ -61,10 +61,7 @@ function EditUsers(props) {
         <button aria-label="Cancel">Cancel</button>
       </Link>
       <Link to={`/`}>
-        <button
-          aria-label="Edit user"
-          onClick={() => dispatch(editUser(user))}
-        >
+        <button aria-label="Edit user" onClick={() => dispatch(editUser(user))}>
           Edit
         </button>
       </Link>
