@@ -1,12 +1,25 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { login } from "../../redux/login.actions";
 
 function Login(props) {
   const dispatch = useDispatch();
+  const history = useHistory()
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const { username: userAuth } = useSelector((state) => state.login)
+  const { error: authError } = useSelector((state) => state.login)
+
+
+
+  const handleLogin = () => {
+    dispatch(login(username, password))
+  }
+
+  if (userAuth) {
+    history.push('/users')
+  }
 
   return (
     <div>
@@ -33,14 +46,14 @@ function Login(props) {
           }}
         />
       </p>
-      <Link to={`/users`}>
-        <button
+      <button
           aria-label="login"
-          onClick={() => dispatch(login(username, password))}
-        >
-          Sign In
-        </button>
-      </Link>
+          onClick={handleLogin}
+      >
+        Sign In
+      </button>
+      <br/>
+        {authError && <span>{authError}</span>}
     </div>
   );
 }

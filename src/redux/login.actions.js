@@ -2,12 +2,14 @@ import { PASSWORD } from "../utils/constants";
 
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
+export const LOGIN_ERROR = "LOGIN_ERROR";
+
 
 export const login = (username, password) => async (dispatch) => {
   if (password === PASSWORD) {
     dispatch({ type: LOGIN, payload: { username, password } });
   } else {
-    console.log("Wrong username or password");
+    dispatch({ type: LOGIN_ERROR, payload: { error: 'Wrong username or password' } });
   }
 };
 
